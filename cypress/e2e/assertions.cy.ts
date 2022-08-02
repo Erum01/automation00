@@ -32,11 +32,15 @@ expect(name).to.be.equal('erum') //no error means assertion has passed
 
 cy.get('.first')
 
- assert.isString('apple', 'val is string')
+ assert.isString('Apple', 'val is string')
 
 //  assert.isOk('', 'everything is ok')
 assert.equal(3, 3, 'Equal')
+assert.strictEqual(4,4,'Not strickly  equal')
 
-// assert.deepEqual(4,4,'not equal')
+assert.deepEqual(4,4,'not equal')
+assert.isNumber(5,'val is not a Number')
+assert.isBoolean(true,"value is boolen")
+
 
 })

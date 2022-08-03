@@ -19,7 +19,8 @@ export class LoginPage{
 
         //cy.get('#uname').type('test')  // these values e.g. url , test are hard coaded
        // cy.get('#uname').type('enterUsername')
-       cy.get('LoginPage_username').type('enterUsername')
+      // cy.get('LoginPage_username').type('enterUsername')
+       cy.get('#uname')
 
 
     }

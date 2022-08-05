@@ -98,12 +98,13 @@ describe("this is DemoQA",function(){
        cy.get('#state')
         .click()
         cy.get('#state').type('NCR')
+        //.select('NCR')
+        //.should('have.value','NCR')
         //find('.css-1wa3eu0-placeholder"')
         //.click()
 
         //select city // field is disabled
-       //cy.get('#stateCity-wrapper > :nth-child(3)').should('be.disabled')
-       // cy.get('#stateCity-wrapper > :nth-child(3)').type('')
+       cy.get('#stateCity-wrapper > :nth-child(3)').click({ force: true })
        
        // submit
        cy.get('#submit').click()

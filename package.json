@@ -10,6 +10,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@types/mocha": "^9.1.1"
+    "@types/mocha": "^9.1.1",
+    "snapsvg": "^0.5.1"
+  },
+  "devDependencies": {
+    "cypress-file-upload": "^5.0.8"
   }
 }

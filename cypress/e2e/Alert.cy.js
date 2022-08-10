@@ -13,7 +13,8 @@ describe('test suite2',function(){
 
     it('verify alert window',function(){
 
-        cy.get('.elementor-widget-container').find('[name="alertbox"]').click()
+        cy.get('.elementor-widget-container').find('[name="alertbox"]')
+        .click() // an event will occur on =click
         // alert will not appear in cypress window
         // but an accept line with string will appear after test run
         //cy.on('window:alert',(str) =>{  // trigger event using cy.on
@@ -31,6 +32,7 @@ describe('test suite2',function(){
             .click()
             cy.on('window:confirm',function(str2){
             expect(str2).to.equal('Confirm pop up with OK and Cancel button')
+            //cy.get('#confirm-answer').contains('Answer: Yes');
 
             })
         })

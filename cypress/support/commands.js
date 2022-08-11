@@ -29,3 +29,10 @@ Cypress.on('uncaught:exception', (err, runnable) => {
     return false
   })
   import 'cypress-file-upload';
+  Cypress.Commands.add('login',(email,password) =>{
+    cy.visit('https://admin-demo.nopcommerce.com/login')
+    cy.get('#Email').clear().should('be.empty').type("admin@yourstore.com")
+    cy.get('#Password').clear().should('be.empty').type('admin')
+    cy.get('.button-1').click()
+
+  })

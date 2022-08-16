@@ -36,3 +36,5 @@ Cypress.on('uncaught:exception', (err, runnable) => {
     cy.get('.button-1').click()
 
   })
+
+  

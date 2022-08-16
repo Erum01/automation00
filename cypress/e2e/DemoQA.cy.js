@@ -1,14 +1,11 @@
 /// <reference types="cypress" />
 
-import { addSyntheticLeadingComment } from "typescript"
 
 // import cypress from "cypress"
 describe("this is DemoQA",function(){
-    it("google",function(){
+    it("DemoQA Form",function(){
         cy.visit("https://demoqa.com/")
         cy.viewport(1710, 1166)
-
-
         // click on elements
         cy.get(':nth-child(1) > :nth-child(1) > .avatar > svg > path').click()
         //cy.get('#google_ads_iframe_\/21849154601\,22343295815\/Ad\.Plus-Anchor_0__container__').click()
@@ -16,13 +13,10 @@ describe("this is DemoQA",function(){
         cy.get(':nth-child(2) > .group-header > .header-wrapper > .header-right').click()
         // click on form
         cy.get(':nth-child(2) > .element-list > .menu-list > #item-0 > .text').click()
-    
         // type  first name 
         cy.get('#firstName').type("erum")
-
         // type lastname
         cy.get('#lastName').type("naz")
-
         // type email
         cy.get('#userEmail').type("test@test.com")
         // let Female = 'Female'
@@ -30,8 +24,7 @@ describe("this is DemoQA",function(){
         // select gender
       cy.get('.custom-control.custom-radio.custom-control-inline')// hit by class of div1 
       // don't forget to add . instead of space when using class
-      cy.get('[class="custom-control custom-radio custom-control-inline"]')
-       
+      cy.get('[class="custom-control custom-radio custom-control-inline"]')   
       cy.get('.custom-radio').contains('Female').click() // custom radio is common 
      // cy.xpath('input[value="Female"]').click() 
     //   cy.get('class="col-md-9 col-sm-12')
@@ -39,34 +32,23 @@ describe("this is DemoQA",function(){
     //   .should('have.id','gender-radio-2')
     //   .should('have.type')
     //   .and('have.value',Female)
-     
-
-       //cy.get('#genterWrapper > .col-md-9 > :nth-child(2) > .custom-control-label')  // hit by cypress label issue 
-       
-
+     //cy.get('#genterWrapper > .col-md-9 > :nth-child(2) > .custom-control-label')  // hit by cypress label issue 
     //    cy.get('custom-control-input').contains('Female')
     //    .should('be.visible')
     //    .and('have.id','gender-radio-2')
-
-
-       //.within(function(){
+        //.within(function(){
        // cy.get('custom-control-label')
        // cy.contains('custom-control-label')
       // .click({force: true})
-       
        // cy.get('#genterWrapper > .col-md-9 > :nth-child(2)') // with out lable
       //  .find('radio')
-
       // select number
       cy.get('#userNumber').type('0123456789')
-      
       // date picker
       cy.get('#dateOfBirth-wrapper')
    //// cy.get('#dateOfBirth')
     cy.get('.react-datepicker-wrapper')
     cy.get('#dateOfBirthInput').click()
-   // 
-    
     cy.get('.react-datepicker')
     cy.get('.react-datepicker__week')
     .find('.react-datepicker__day--today')
@@ -88,10 +70,8 @@ describe("this is DemoQA",function(){
         cy.get('#uploadPicture')
         .attachFile('../fixtures/logo1.jpg')
        // cy.wait('@upload', { requestTimeout: 120000 });
-
         //current address
         cy.get('#currentAddress').type('sample text ')
-
         // select state
        // cy.get('.css-2b097c-container')
        //cy.get('.css-1wa3eu0-placeholder')
@@ -100,37 +80,23 @@ describe("this is DemoQA",function(){
         cy.get('#state').type('NCR')
         //.select('NCR')
         //.should('have.value','NCR')
-        //find('.css-1wa3eu0-placeholder"')
-        //.click()
-
-        //select city // field is disabled
+        //find('.css-1wa3eu0-placeholder"')//.click()
+     //select city // field is disabled
        cy.get('#stateCity-wrapper > :nth-child(3)').click({ force: true })
-       
-       // submit
+              // submit
        cy.get('#submit').click()
-
-    
-
-
       })
 
+    it.only("modal dialogs",function(){
+      //practice with vartiables
+    cy.visit("https://demoqa.com/modal-dialogs")
+    it('return var',function(){
+      // make a constant variable
+      const SmallModelText = cy.get('#showSmallModal').text()  // get value of text in constant // .text is just a chainable command
+      cy.log(SmallModelText) // pass value of constant to log 
+      //this will cause type error
+    })
+  
     })
 
-
-        
-       //.select('Female')
-       
-
-        //     cy.get('select').select('Female')
-
-        //<input name="gender" required="" type="radio" id="gender-radio-2" class="custom-control-input" value="Female">)
-        
-       // cy.get('#userEmail').select()
-      
-
-    
-
-/*it("google",function(){
-    cy.visit("https://www.google.com/")
-*/
-
+})

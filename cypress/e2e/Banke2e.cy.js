@@ -23,10 +23,14 @@ describe('Bank',function(){
         cy.reload()
       // Now go to customers 
       cy.get('.borderM > :nth-child(1) > .btn').click()
+      //then get class of dropdowm and uase contain 
       //cy.get('.center').find('button[class="btn btn-primary btn-lg"]').click()
       // select cuatomer to log in
-     // cy.get('.form-group').find('#userSelect')
-      //.select('Draco Malfoye')
-       
+     cy.get('.form-group').find('#userSelect')
+      .contains('Draco Malfoye').click()  
     })
+    //verify newly added account is available for client 
+    //verify if customer is deleted it should not be available in client
+    //
+    
 })

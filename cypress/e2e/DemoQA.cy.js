@@ -87,7 +87,7 @@ describe("this is DemoQA",function(){
        cy.get('#submit').click()
       })
 
-    it.only("modal dialogs",function(){
+    /* it.only("modal dialogs",function(){
       //practice with vartiables
     cy.visit("https://demoqa.com/modal-dialogs")
     it('return var',function(){
@@ -95,8 +95,8 @@ describe("this is DemoQA",function(){
       const SmallModelText = cy.get('#showSmallModal').text()  // get value of text in constant // .text is just a chainable command
       cy.log(SmallModelText) // pass value of constant to log 
       //this will cause type error
-    })
+    }) */
   
-    })
+    
 
 })

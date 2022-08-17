@@ -34,7 +34,7 @@ describe('BankManager',function(){
         // customer id is changing each time a new customer is added
      }) 
 
-     it('Open Account',function(){
+     it.only('Open Account',function(){
         cy.get('[ng-class="btnClass2"]').click()
        // cy.get('.center')// .find('.btnClass2')
       //.find('.btn-primary')
@@ -54,12 +54,9 @@ describe('BankManager',function(){
         //search record in table
         cy.get('table[class="table table-bordered table-striped"]') // table is the tag of attribute
         .contains('td','Harry')
-        // delet record from table ???
+        // delete record from table ???
 
      })
-
-     
-
-           
+     //verify if tyhe custromers account is deleted it sbould be updated in the datatable
 
 })

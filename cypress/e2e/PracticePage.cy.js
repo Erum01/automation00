@@ -18,16 +18,28 @@ describe('Practicepage',function(){
         cy.get('[for="radio3"] > .radioButton')//.contains('Radio3')
         .click()
     })
-    it('select country from suggestion',function(){
+    it.only('select country from suggestion',function(){
         cy.log('*****select country from dropdown sugessaion*****')
-        cy.get('#autocomplete').type('Pakistan').select('Pakistan')
+        cy.get('#autocomplete').type('Pak')
         // issue : its not selecting the selected sugession with {enter} 
         //.contains('Pakistan').type('{enter}')
+       // cy.get('.ui-autocomplete-input"')
+       cy.wait(5000)
+        cy.get('[class="inputs ui-autocomplete-input"]') // issue beccause ui is not present in DOM
+        .each(($el, index, $list) => {
+            // $el is a wrapped jQuery element
+            if ($el.text() === 'Pakistan') {
+              // wrap this element so we can
+              // use cypress commands on it
+              cy.wrap($el).click()
+            }    
+        })
 
     })
     it('select from dromdown option',function(){
 
         cy.get('#dropdown-class-example').select('Option1')
+       // cy.pause()
 
     })
     it('check boxs',function(){
@@ -41,11 +53,14 @@ describe('Practicepage',function(){
     })
     it('switch tab',function(){
         cy.get('#opentab').invoke('removeAttr','target')
+        cy.wait(5000)
     })
+    
     it('switch to alert',function(){
         cy.get('#name').type('Erum')
         cy.get('#alertbtn').click()
         cy.get('#confirmbtn').click()
+        cy
     })
     
 })
